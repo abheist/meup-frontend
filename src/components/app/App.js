@@ -1,13 +1,10 @@
-import React from "react";
-import "../../assets/Inter/inter.css";
-import "./App.css";
+import React from 'react';
+import '../../assets/Inter/inter.css';
+import './App.css';
+import Theme from './Theme';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header headline2">Hellos</header>
-    </div>
-  );
+  return <Theme>Hellos</Theme>;
 }
 
 export default App;
