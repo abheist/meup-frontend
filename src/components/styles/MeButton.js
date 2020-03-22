@@ -17,7 +17,7 @@ import {
   DANGER_COLOR_DARK,
   DANGER_COLOR_DARKER,
   WARNING_COLOR_DARKER
-} from '../app/ThemeConstants';
+} from './ThemeConstants';
 
 const buttonColors = theme.variants('mode', 'kind', {
   default: {
