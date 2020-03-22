@@ -21,7 +21,6 @@ import {
 function App() {
   return (
     <Theme>
-      Hellos
       <MeButton>Hello World!</MeButton>
       <MeH1>Hello</MeH1>
       <MeH2>Hello</MeH2>
