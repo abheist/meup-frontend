@@ -194,11 +194,15 @@ export const MeButton = styled(Button)`
   transition: box-shadow 0.15s ease-in-out;
   outline: 0;
   padding: 0.375em 0.75em;
-  line-height: 1.5;
   border: transparent;
   cursor: pointer;
-  font-size: 16px;
   border-radius: 0.25rem;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 1.25px;
+  text-transform: uppercase;
 
   &[aria-disabled='true'] {
     cursor: auto;

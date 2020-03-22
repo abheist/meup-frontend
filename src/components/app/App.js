@@ -15,8 +15,7 @@ import {
   MeBody,
   MeBody2,
   MeOverline,
-  MeCaption,
-  MeButtonText
+  MeCaption
 } from '../styles/Typography';
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
       <MeSubtitle2>Hello</MeSubtitle2>
       <MeBody>Hello</MeBody>
       <MeBody2>Hello</MeBody2>
-      <MeButtonText>Hello</MeButtonText>
       <MeCaption>Hello</MeCaption>
       <MeOverline>Hello</MeOverline>
     </Theme>

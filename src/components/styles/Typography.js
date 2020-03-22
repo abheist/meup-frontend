@@ -74,6 +74,7 @@ export const MeButtonText = styled.span`
   font-size: 14px;
   line-height: 17px;
   letter-spacing: 1.25px;
+  text-transform: uppercase;
 `;
 export const MeCaption = styled.p`
   font-style: normal;
