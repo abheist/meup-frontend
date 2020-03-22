@@ -8,7 +8,11 @@ import {
   MONO_SPACED_FONT
 } from './ThemeConstants';
 
-const backgroundColor = theme('mode', { light: LIGHT_COLOR, dark: DARK_COLOR });
+export const backgroundColor = theme('mode', {
+  light: LIGHT_COLOR,
+  dark: DARK_COLOR
+});
+
 const textColor = theme('mode', { light: DARK_COLOR, dark: LIGHT_COLOR });
 const fontFamily = theme('font', {
   sanSerif: SAN_SERIF_FONT,
@@ -22,12 +26,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${fontFamily};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin: 0;
   }
 `;
 
 const Theme = props => (
-  <ThemeProvider theme={{ mode: 'light', font: 'sanSerif' }}>
+  <ThemeProvider
+    theme={{ mode: mode => mode.light, font: font => font.sanSerif }}
+  >
     <GlobalStyle />
     {props.children}
   </ThemeProvider>
