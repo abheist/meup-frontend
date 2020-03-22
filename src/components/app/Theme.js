@@ -7,6 +7,7 @@ import {
   SAN_SERIF_FONT,
   MONO_SPACED_FONT
 } from './ThemeConstants';
+import { normalize } from 'styled-normalize';
 
 export const backgroundColor = theme('mode', {
   light: LIGHT_COLOR,
@@ -20,6 +21,7 @@ const fontFamily = theme('font', {
 });
 
 const GlobalStyle = createGlobalStyle`
+  ${normalize}
   body {
     color: ${textColor};
     background-color: ${backgroundColor};
