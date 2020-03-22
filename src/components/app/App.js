@@ -8,12 +8,7 @@ function App() {
   return (
     <Theme>
       Hellos
-      <MeButton disabled>World!</MeButton>
-      <MeButton>World!</MeButton>
-      <MeButton kind="primary">World!</MeButton>
-      <MeButton kind="success">World!</MeButton>
-      <MeButton kind="warning">World!</MeButton>
-      <MeButton kind="danger">World!</MeButton>
+      <MeButton>Hello World!</MeButton>
     </Theme>
   );
 }
