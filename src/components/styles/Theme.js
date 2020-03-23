@@ -7,7 +7,6 @@ import {
   SAN_SERIF_FONT,
   MONO_SPACED_FONT
 } from './ThemeConstants';
-import { normalize } from 'styled-normalize';
 
 export const backgroundColor = theme('mode', {
   light: LIGHT_COLOR,
@@ -21,14 +20,22 @@ const fontFamily = theme('font', {
 });
 
 const GlobalStyle = createGlobalStyle`
-  ${normalize}
+
   body {
     color: ${textColor};
     background-color: ${backgroundColor};
     font-family: ${fontFamily};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
   }
+
+  ::selection {
+    color: rgb(255, 255, 255);
+    background-color: rgb(87, 62, 222);
+
+}
 `;
 
 const Theme = props => (
