@@ -1,32 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnauthenticatedApp';
-import { useQuery, gql } from '@apollo/client';
+import { isAuthenticated, setAuthToken } from '../../helpers/authService';
 
-function AppHandler() {
-  // const user = true;
+class AppHandler extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isAuthenticated: isAuthenticated()
+    };
+  }
 
-  const USERS = gql`
-    {
-      users {
-        id
-        email
-        username
-      }
-    }
-  `;
+  authenticateUser = token => {
+    setAuthToken(token);
+    this.setState({ ...this.state, isAuthenticated: true });
+  };
 
-  const { loading, error, data } = useQuery(USERS);
-  if (loading) return <p>loading...</p>;
-  if (error) return <p>error...</p>;
-  return (
-    <div>
-      <code>
-        <pre>{JSON.stringify(data.users)}</pre>
-      </code>
-      {/* <div>{user ? <AuthenticatedApp /> : <UnauthenticatedApp />}</div>; */}
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <div>
+          {this.state.isAuthenticated ? (
+            <AuthenticatedApp />
+          ) : (
+            <UnauthenticatedApp authenticateUser={this.authenticateUser} />
+          )}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default AppHandler;
