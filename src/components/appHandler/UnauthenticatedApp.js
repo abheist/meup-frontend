@@ -70,14 +70,9 @@ function UnauthenticatedApp(props) {
 						<SignUpForm />
 					</div>
 				</Flex>
-				<Flex
-					height="40px"
-					as={MeCaption}
-					justify="flex-end"
-					align="center"
-					gap="10"
-				>
-					<div>© 2020 MeUp</div>|<div>All rights reserved.</div>|
+				<Flex height="40px" justify="flex-end" align="center" gap="10">
+					<MeCaption>© 2020 MeUp</MeCaption>|
+					<MeCaption>All rights reserved.</MeCaption>|
 					<a href="https://example.com/privacy">Privacy policies</a>|
 					<a href="https://meup.com/terms">Terms & Conditions</a>
 				</Flex>
