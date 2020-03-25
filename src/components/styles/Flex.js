@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { SPACINGS } from './ThemeConstants';
+import { COLORS } from './ThemeConstants';
 
 export const Flex = styled.div`
   display: flex;
@@ -13,10 +13,34 @@ export const Flex = styled.div`
   ${props => props.order && `order: ${props.order};`}
   ${props => props.self && `align-self: ${props.self};`}
   ${props => props.margin && `margin: ${props.margin + 'px'};`}
-  ${props => props.padding && `padding: ${props.padding + 'px'};`}
+  ${props =>
+    props.padding &&
+    props.padding.top &&
+    `padding-top: ${props.padding.top + 'px'};`}
+  ${props =>
+    props.padding &&
+    props.padding.right &&
+    `padding-right: ${props.padding.right + 'px'};`}
+  ${props =>
+    props.padding &&
+    props.padding.bottom &&
+    `padding-bottom: ${props.padding.bottom + 'px'};`}
+  ${props =>
+    props.padding &&
+    props.padding.left &&
+    `padding-left: ${props.padding.left + 'px'};`}
   ${props => props.width && `width: ${props.width + 'px'};`}
   ${props => props.minWidth && `min-width: ${props.minWidth + 'px'};`}
   ${props => props.maxWidth && `max-width: ${props.maxWidth + 'px'};`}
+  ${props => props.background && `background: ${props.background};`}
+  ${props =>
+    props.fill &&
+    `
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+  `}
 `;
 
 Flex.propTypes = {
@@ -88,6 +112,21 @@ Flex.propTypes = {
     'baseline',
     'stretch'
   ]),
-  margin: SPACINGS,
-  padding: SPACINGS
+  margin: PropTypes.shape({
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number
+  }),
+  width: PropTypes.string,
+  minWidth: PropTypes.string,
+  maxWidth: PropTypes.string,
+  background: COLORS,
+  fill: PropTypes.string,
+  padding: PropTypes.shape({
+    top: PropTypes.number,
+    right: PropTypes.number,
+    bottom: PropTypes.number,
+    left: PropTypes.number
+  })
 };
