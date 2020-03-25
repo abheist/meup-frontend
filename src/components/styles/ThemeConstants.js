@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const COLOR_LIGHT = '#ffffff';
 export const COLOR_DARK = '#1A202C';
 export const COLOR_BACKGROUND = '#f3f3f4';
@@ -26,3 +28,5 @@ export const FONT_SAN_SERIF =
   '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
 export const FONT_MONO_SPACED =
   'source-code-pro, Menlo, Monaco, Consolas, "Courier New"';
+
+export const SPACINGS = PropTypes.oneOf([4, 8, 16, 20, 24, 32, 40, 54]);
