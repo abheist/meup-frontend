@@ -14,6 +14,9 @@ export const Flex = styled.div`
   ${props => props.self && `align-self: ${props.self};`}
   ${props => props.margin && `margin: ${props.margin + 'px'};`}
   ${props => props.padding && `padding: ${props.padding + 'px'};`}
+  ${props => props.width && `width: ${props.width + 'px'};`}
+  ${props => props.minWidth && `min-width: ${props.minWidth + 'px'};`}
+  ${props => props.maxWidth && `max-width: ${props.maxWidth + 'px'};`}
 `;
 
 Flex.propTypes = {
