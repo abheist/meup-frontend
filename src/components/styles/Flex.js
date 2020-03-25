@@ -57,6 +57,13 @@ export const FlexItem = styled.div`
 			min-width: 100%;
 			min-height: 100%;
 		`}
+	${props =>
+		props.gap &&
+		`
+		div, span, a, button {
+			${props.gap && `margin: ${props.gap + 'px'};`}
+		}
+	`}
 `;
 
 export const Flex = styled(FlexItem)`

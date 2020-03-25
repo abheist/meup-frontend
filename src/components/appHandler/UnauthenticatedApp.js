@@ -1,9 +1,9 @@
 import React from 'react';
-import { Flex } from '../styles/Flex';
+import { Flex, FlexItem } from '../styles/Flex';
 import { COLOR_PRIMARY, COLOR_LIGHT } from '../styles/ThemeConstants';
 import logo from '../../assets/img/logo_white.png';
 import selfieImg from '../../assets/img/open-doodles-selfie.svg';
-import { MeLightH5, MeLightH6 } from '../styles/Typography';
+import { MeLightH5, MeLightH6, MeCaption } from '../styles/Typography';
 // eslint-disable-next-line no-unused-vars
 import styled from 'styled-components/macro';
 import LoginForm from '../forms/LoginForm';
@@ -69,6 +69,17 @@ function UnauthenticatedApp(props) {
 					>
 						<SignUpForm />
 					</div>
+				</Flex>
+				<Flex
+					height="40px"
+					as={MeCaption}
+					justify="flex-end"
+					align="center"
+					gap="10"
+				>
+					<div>© 2020 MeUp</div>|<div>All rights reserved.</div>|
+					<a href="https://example.com/privacy">Privacy policies</a>|
+					<a href="https://meup.com/terms">Terms & Conditions</a>
 				</Flex>
 			</Flex>
 		</Flex>
