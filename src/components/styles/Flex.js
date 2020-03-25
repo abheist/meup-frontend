@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { COLORS } from './ThemeConstants';
 
-export const Flex = styled.div`
-  display: flex;
+export const FlexItem = styled.div`
   ${props => props.directions && `flex-direction: ${props.direction};`}
   ${props => props.justify && `justify-content: ${props.justify};`}
   ${props => props.content && `align-content: ${props.content};`}
@@ -12,7 +11,6 @@ export const Flex = styled.div`
   ${props => props.flex && `flex: ${props.flex};`}
   ${props => props.order && `order: ${props.order};`}
   ${props => props.self && `align-self: ${props.self};`}
-  ${props => props.margin && `margin: ${props.margin + 'px'};`}
   ${props =>
     props.padding &&
     props.padding.top &&
@@ -29,7 +27,24 @@ export const Flex = styled.div`
     props.padding &&
     props.padding.left &&
     `padding-left: ${props.padding.left + 'px'};`}
-  ${props => props.width && `width: ${props.width + 'px'};`}
+
+  ${props =>
+    props.margin &&
+    props.margin.top &&
+    `margin-top: ${props.margin.top + 'px'};`}
+  ${props =>
+    props.margin &&
+    props.margin.right &&
+    `margin-right: ${props.margin.right + 'px'};`}
+  ${props =>
+    props.margin &&
+    props.margin.bottom &&
+    `margin-bottom: ${props.margin.bottom + 'px'};`}
+  ${props =>
+    props.margin &&
+    props.margin.left &&
+    `margin-left: ${props.margin.left + 'px'};`}
+  ${props => props.width && `width: ${props.width};`}
   ${props => props.minWidth && `min-width: ${props.minWidth + 'px'};`}
   ${props => props.maxWidth && `max-width: ${props.maxWidth + 'px'};`}
   ${props => props.background && `background: ${props.background};`}
@@ -43,7 +58,11 @@ export const Flex = styled.div`
   `}
 `;
 
-Flex.propTypes = {
+export const Flex = styled(FlexItem)`
+  display: flex;
+`;
+
+FlexItem.propTypes = {
   direction: PropTypes.oneOf([
     'row',
     'row-reverse',

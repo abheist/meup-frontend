@@ -18,15 +18,13 @@ class AppHandler extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          {this.state.isAuthenticated ? (
-            <AuthenticatedApp />
-          ) : (
-            <UnauthenticatedApp authenticateUser={this.authenticateUser} />
-          )}
-        </div>
-      </div>
+      <>
+        {this.state.isAuthenticated ? (
+          <AuthenticatedApp />
+        ) : (
+          <UnauthenticatedApp authenticateUser={this.authenticateUser} />
+        )}
+      </>
     );
   }
 }
