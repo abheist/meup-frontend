@@ -32,7 +32,7 @@ function LoginForm(props) {
         }}
       >
         <Form>
-          <Flex justigy="space-between" align="flex-end">
+          <Flex justigy="space-between">
             <FormGroup margin={{ right: 10 }}>
               <label htmlFor="username">Username</label>
               <Field
@@ -54,11 +54,11 @@ function LoginForm(props) {
               />
               <ErrorMessage name="password" />
             </FormGroup>
-            <div>
+            <FlexItem margin={{ top: 36 }}>
               <MeButton type="submit" kind="primary">
                 Login
               </MeButton>
-            </div>
+            </FlexItem>
           </Flex>
         </Form>
       </Formik>
