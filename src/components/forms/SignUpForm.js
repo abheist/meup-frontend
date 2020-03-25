@@ -22,27 +22,29 @@ function SignUpForm(props) {
 				<Form>
 					<Flex direction="column" justigy="space-between">
 						<FormGroup width="100%">
-							<label htmlFor="username">Username</label>
+							<label htmlFor="email">Email</label>
 							<Field
 								as={MeTextInput}
-								name="username"
-								type="text"
+								name="email"
+								type="email"
 								width="100%"
 								minWidth="230px"
-								autoComplete="username"
+								autoComplete="email"
 							/>
-							<ErrorMessage name="username" />
+							<ErrorMessage name="email" />
 						</FormGroup>
 
 						<FormGroup width="100%">
-							<label htmlFor="password">Password</label>
+							<label htmlFor="password">
+								Enter a new password
+							</label>
 							<Field
-								as={MeTextInput}
 								width="100%"
 								name="password"
 								type="password"
 								minWidth="350px"
-								autoComplete="current-password"
+								as={MeTextInput}
+								autoComplete="new-password"
 							/>
 							<ErrorMessage name="password" />
 						</FormGroup>
