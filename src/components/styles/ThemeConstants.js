@@ -1,23 +1,28 @@
-export const LIGHT_COLOR = '#ffffff';
-export const DARK_COLOR = '#1A202C';
+export const COLOR_LIGHT = '#ffffff';
+export const COLOR_DARK = '#1A202C';
+export const COLOR_BACKGROUND = '#f3f3f4';
 
-export const PRIMARY_COLOR = '#3471ff';
-export const PRIMARY_COLOR_DARK = '#2942ff';
-export const PRIMARY_COLOR_DARKER = '#3015f9';
+export const COLOR_PRIMARY_LIGHT = '#ebf1ff';
+export const COLOR_PRIMARY = '#3471ff';
+export const COLOR_PRIMARY_DARK = '#2942ff';
+export const COLOR_PRIMARY_DARKER = '#3015f9';
 
-export const SUCCESS_COLOR = '#28a745';
-export const SUCCESS_COLOR_DARK = '#099026';
-export const SUCCESS_COLOR_DARKER = '#036323';
+export const COLOR_SUCCESS_LIGHT = '#eaf6ec';
+export const COLOR_SUCCESS = '#28a745';
+export const COLOR_SUCCESS_DARK = '#099026';
+export const COLOR_SUCCESS_DARKER = '#036323';
 
-export const DANGER_COLOR = '#dc3546';
-export const DANGER_COLOR_DARK = '#e7182d';
-export const DANGER_COLOR_DARKER = '#ce1225';
+export const COLOR_DANGER_LIGHT = '#fbebed';
+export const COLOR_DANGER = '#dc3546';
+export const COLOR_DANGER_DARK = '#e7182d';
+export const COLOR_DANGER_DARKER = '#ce1225';
 
-export const WARNING_COLOR = '#ffc207';
-export const WARNING_COLOR_DARK = '#ffac05';
-export const WARNING_COLOR_DARKER = '#ff9705';
+export const COLOR_WARNING_LIGHT = '#fff9e6';
+export const COLOR_WARNING = '#ffc207';
+export const COLOR_WARNING_DARK = '#ffac05';
+export const COLOR_WARNING_DARKER = '#ff9705';
 
-export const SAN_SERIF_FONT =
+export const FONT_SAN_SERIF =
   '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
-export const MONO_SPACED_FONT =
+export const FONT_MONO_SPACED =
   'source-code-pro, Menlo, Monaco, Consolas, "Courier New"';

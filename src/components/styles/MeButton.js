@@ -3,26 +3,26 @@ import { Button } from 'reakit';
 import theme from 'styled-theming';
 import PropTypes from 'prop-types';
 import {
-  DARK_COLOR,
-  LIGHT_COLOR,
-  PRIMARY_COLOR,
-  SUCCESS_COLOR,
-  WARNING_COLOR,
-  DANGER_COLOR,
-  PRIMARY_COLOR_DARK,
-  PRIMARY_COLOR_DARKER,
-  SUCCESS_COLOR_DARK,
-  SUCCESS_COLOR_DARKER,
-  WARNING_COLOR_DARK,
-  DANGER_COLOR_DARK,
-  DANGER_COLOR_DARKER,
-  WARNING_COLOR_DARKER
+  COLOR_DARK,
+  COLOR_LIGHT,
+  COLOR_PRIMARY,
+  COLOR_SUCCESS,
+  COLOR_WARNING,
+  COLOR_DANGER,
+  COLOR_PRIMARY_DARK,
+  COLOR_PRIMARY_DARKER,
+  COLOR_SUCCESS_DARK,
+  COLOR_SUCCESS_DARKER,
+  COLOR_WARNING_DARK,
+  COLOR_DANGER_DARK,
+  COLOR_DANGER_DARKER,
+  COLOR_WARNING_DARKER
 } from './ThemeConstants';
 
 const buttonColors = theme.variants('mode', 'kind', {
   default: {
     light: css`
-      color: ${DARK_COLOR};
+      color: ${COLOR_DARK};
       background: transparent;
 
       &:not([aria-disabled='true']) {
@@ -36,7 +36,7 @@ const buttonColors = theme.variants('mode', 'kind', {
       }
     `,
     dark: css`
-      color: ${LIGHT_COLOR};
+      color: ${COLOR_LIGHT};
       background: transparent;
 
       &:not([aria-disabled='true']) {
@@ -52,137 +52,137 @@ const buttonColors = theme.variants('mode', 'kind', {
   },
   primary: {
     light: css`
-      color: ${LIGHT_COLOR};
-      background: ${PRIMARY_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_PRIMARY};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${PRIMARY_COLOR_DARK};
-          border-color: ${PRIMARY_COLOR_DARK};
+          background-color: ${COLOR_PRIMARY_DARK};
+          border-color: ${COLOR_PRIMARY_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${PRIMARY_COLOR_DARKER};
-          border-color: ${PRIMARY_COLOR_DARKER};
+          background-color: ${COLOR_PRIMARY_DARKER};
+          border-color: ${COLOR_PRIMARY_DARKER};
         }
       }
     `,
     dark: css`
-      color: ${LIGHT_COLOR};
-      background: ${PRIMARY_COLOR};
-      border-color: ${PRIMARY_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_PRIMARY};
+      border-color: ${COLOR_PRIMARY};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${PRIMARY_COLOR_DARK};
-          border-color: ${PRIMARY_COLOR_DARK};
+          background-color: ${COLOR_PRIMARY_DARK};
+          border-color: ${COLOR_PRIMARY_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${PRIMARY_COLOR_DARKER};
-          border-color: ${PRIMARY_COLOR_DARKER};
+          background-color: ${COLOR_PRIMARY_DARKER};
+          border-color: ${COLOR_PRIMARY_DARKER};
         }
       }
     `
   },
   success: {
     light: css`
-      color: ${LIGHT_COLOR};
-      background: ${SUCCESS_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_SUCCESS};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${SUCCESS_COLOR_DARK};
-          border-color: ${SUCCESS_COLOR_DARK};
+          background-color: ${COLOR_SUCCESS_DARK};
+          border-color: ${COLOR_SUCCESS_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${SUCCESS_COLOR_DARKER};
-          border-color: ${SUCCESS_COLOR_DARKER};
+          background-color: ${COLOR_SUCCESS_DARKER};
+          border-color: ${COLOR_SUCCESS_DARKER};
         }
       }
     `,
     dark: css`
-      color: ${LIGHT_COLOR};
-      background: ${SUCCESS_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_SUCCESS};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${SUCCESS_COLOR_DARK};
-          border-color: ${SUCCESS_COLOR_DARK};
+          background-color: ${COLOR_SUCCESS_DARK};
+          border-color: ${COLOR_SUCCESS_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${SUCCESS_COLOR_DARKER};
-          border-color: ${SUCCESS_COLOR_DARKER};
+          background-color: ${COLOR_SUCCESS_DARKER};
+          border-color: ${COLOR_SUCCESS_DARKER};
         }
       }
     `
   },
   warning: {
     light: css`
-      color: ${LIGHT_COLOR};
-      background: ${WARNING_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_WARNING};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${WARNING_COLOR_DARK};
-          border-color: ${WARNING_COLOR_DARK};
+          background-color: ${COLOR_WARNING_DARK};
+          border-color: ${COLOR_WARNING_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${WARNING_COLOR_DARKER};
-          border-color: ${WARNING_COLOR_DARKER};
+          background-color: ${COLOR_WARNING_DARKER};
+          border-color: ${COLOR_WARNING_DARKER};
         }
       }
     `,
     dark: css`
-      color: ${LIGHT_COLOR};
-      background: ${WARNING_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_WARNING};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${WARNING_COLOR_DARK};
-          border-color: ${WARNING_COLOR_DARK};
+          background-color: ${COLOR_WARNING_DARK};
+          border-color: ${COLOR_WARNING_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${WARNING_COLOR_DARKER};
-          border-color: ${WARNING_COLOR_DARKER};
+          background-color: ${COLOR_WARNING_DARKER};
+          border-color: ${COLOR_WARNING_DARKER};
         }
       }
     `
   },
   danger: {
     light: css`
-      color: ${LIGHT_COLOR};
-      background: ${DANGER_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_DANGER};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${DANGER_COLOR_DARK};
-          border-color: ${DANGER_COLOR_DARK};
+          background-color: ${COLOR_DANGER_DARK};
+          border-color: ${COLOR_DANGER_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${DANGER_COLOR_DARKER};
-          border-color: ${DANGER_COLOR_DARKER};
+          background-color: ${COLOR_DANGER_DARKER};
+          border-color: ${COLOR_DANGER_DARKER};
         }
       }
     `,
     dark: css`
-      color: ${LIGHT_COLOR};
-      background: ${DANGER_COLOR};
+      color: ${COLOR_LIGHT};
+      background: ${COLOR_DANGER};
 
       &:not([aria-disabled='true']) {
         &:hover {
-          background-color: ${DANGER_COLOR_DARK};
-          border-color: ${DANGER_COLOR_DARK};
+          background-color: ${COLOR_DANGER_DARK};
+          border-color: ${COLOR_DANGER_DARK};
         }
         &:active,
         &[aria-expanded='true'] {
-          background-color: ${DANGER_COLOR_DARKER};
-          border-color: ${DANGER_COLOR_DARKER};
+          background-color: ${COLOR_DANGER_DARKER};
+          border-color: ${COLOR_DANGER_DARKER};
         }
       }
     `
@@ -193,7 +193,7 @@ export const MeButton = styled(Button)`
   ${buttonColors}
   transition: box-shadow 0.15s ease-in-out;
   outline: 0;
-  padding: 12px 16px;
+  padding: 10px 16px;
   border: transparent;
   cursor: pointer;
   border-radius: 0.25rem;

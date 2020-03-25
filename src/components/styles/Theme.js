@@ -2,21 +2,21 @@ import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import theme from 'styled-theming';
 import {
-  LIGHT_COLOR,
-  DARK_COLOR,
-  SAN_SERIF_FONT,
-  MONO_SPACED_FONT
+  COLOR_LIGHT,
+  COLOR_DARK,
+  FONT_SAN_SERIF,
+  FONT_MONO_SPACED
 } from './ThemeConstants';
 
 export const backgroundColor = theme('mode', {
-  light: LIGHT_COLOR,
-  dark: DARK_COLOR
+  light: COLOR_LIGHT,
+  dark: COLOR_DARK
 });
 
-const textColor = theme('mode', { light: DARK_COLOR, dark: LIGHT_COLOR });
+const textColor = theme('mode', { light: COLOR_DARK, dark: COLOR_LIGHT });
 const fontFamily = theme('font', {
-  sanSerif: SAN_SERIF_FONT,
-  monoSpaced: MONO_SPACED_FONT
+  sanSerif: FONT_SAN_SERIF,
+  monoSpaced: FONT_MONO_SPACED
 });
 
 const GlobalStyle = createGlobalStyle`
