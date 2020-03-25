@@ -6,6 +6,7 @@ import {
 } from './ThemeConstants';
 
 export const MeTextInput = styled.input`
+  display: block;
   padding: 10px 16px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -13,7 +14,6 @@ export const MeTextInput = styled.input`
   line-height: 24px;
   box-sizing: border-box;
   background: ${COLOR_BACKGROUND};
-  display: inline-block;
   font-weight: 400;
   height: 40px;
   letter-spacing: normal;
@@ -36,4 +36,34 @@ export const MeTextInput = styled.input`
     border-color: ${COLOR_PRIMARY_LIGHT};
     box-shadow: 0 0 0 4px ${COLOR_PRIMARY_LIGHT};
   }
+`;
+
+export const FormGroup = styled.div`
+  ${props =>
+    props.margin &&
+    props.margin.top &&
+    `margin-top: ${props.margin.top + 'px'};`}
+  ${props =>
+    props.margin &&
+    props.margin.right &&
+    `margin-right: ${props.margin.right + 'px'};`}
+  ${props =>
+    props.margin &&
+    props.margin.bottom &&
+    `margin-bottom: ${props.margin.bottom + 'px'};`}
+  ${props =>
+    props.margin &&
+    props.margin.left &&
+    `margin-left: ${props.margin.left + 'px'};`}
+
+  label {
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+    margin: 14px 0 4px;
+  }
+
 `;

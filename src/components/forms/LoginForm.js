@@ -2,9 +2,10 @@ import React from 'react';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import { MeButton } from '../styles/MeButton';
 import * as Yup from 'yup';
-import { MeTextInput } from '../styles/MeTextInput';
+import { MeTextInput, FormGroup } from '../styles/MeTextInput';
 import { QL_MUTATION_AUTHENTICATION } from '../../graphql/mutations/authentication';
 import { useMutation } from '@apollo/client';
+import { Flex, FlexItem } from '../styles/Flex';
 
 function LoginForm(props) {
   const [authenticate, { data }] = useMutation(QL_MUTATION_AUTHENTICATION);
@@ -31,26 +32,34 @@ function LoginForm(props) {
         }}
       >
         <Form>
-          <label htmlFor="username">Username</label>
-          <Field
-            as={MeTextInput}
-            name="username"
-            type="text"
-            autoComplete="username"
-          />
-          <ErrorMessage name="username" />
+          <Flex justigy="space-between" align="flex-end">
+            <FormGroup margin={{ right: 10 }}>
+              <label htmlFor="username">Username</label>
+              <Field
+                as={MeTextInput}
+                name="username"
+                type="text"
+                autoComplete="username"
+              />
+              <ErrorMessage name="username" />
+            </FormGroup>
 
-          <label htmlFor="password">Password</label>
-          <Field
-            as={MeTextInput}
-            name="password"
-            type="password"
-            autoComplete="current-password"
-          />
-          <ErrorMessage name="password" />
-          <MeButton type="submit" kind="primary">
-            Login
-          </MeButton>
+            <FormGroup margin={{ right: 10 }}>
+              <label htmlFor="password">Password</label>
+              <Field
+                as={MeTextInput}
+                name="password"
+                type="password"
+                autoComplete="current-password"
+              />
+              <ErrorMessage name="password" />
+            </FormGroup>
+            <div>
+              <MeButton type="submit" kind="primary">
+                Login
+              </MeButton>
+            </div>
+          </Flex>
         </Form>
       </Formik>
       {data && props.authenticateUser(data.tokenAuth.token)}

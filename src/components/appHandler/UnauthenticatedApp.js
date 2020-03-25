@@ -46,7 +46,7 @@ function UnauthenticatedApp(props) {
           justify="flex-end"
           width="100%"
           padding={{
-            top: 32
+            top: 8
           }}
           margin={{
             right: 60

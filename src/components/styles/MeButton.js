@@ -200,7 +200,7 @@ export const MeButton = styled(Button)`
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 17px;
+  line-height: 20px;
   letter-spacing: 1.25px;
   text-transform: uppercase;
   width: ${props => props.width || 'auto'};
