@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components/macro';
 import theme from 'styled-theming';
 import {
 	COLOR_LIGHT,

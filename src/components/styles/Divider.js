@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { COLOR_GRAY } from './ThemeConstants';
 
 export const Divider = styled.div`

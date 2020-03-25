@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const MeH1 = styled.h1`
 	${props => props.color && `color: ${props.color};`}

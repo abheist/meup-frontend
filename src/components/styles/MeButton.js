@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components/macro';
 import { Button } from 'reakit';
 import theme from 'styled-theming';
 import PropTypes from 'prop-types';
