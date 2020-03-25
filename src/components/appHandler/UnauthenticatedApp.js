@@ -3,12 +3,11 @@ import { Flex } from '../styles/Flex';
 import { COLOR_PRIMARY, COLOR_LIGHT } from '../styles/ThemeConstants';
 import logo from '../../assets/img/logo_white.png';
 import selfieImg from '../../assets/img/open-doodles-selfie.svg';
-import { MeLightH5, MeLightH6, MeH5 } from '../styles/Typography';
+import { MeLightH5, MeLightH6 } from '../styles/Typography';
 // eslint-disable-next-line no-unused-vars
 import styled from 'styled-components/macro';
 import LoginForm from '../forms/LoginForm';
-import { MeButton } from '../styles/MeButton';
-import { Google } from '@styled-icons/fa-brands/Google';
+
 import SignUpForm from '../forms/SignUpForm';
 
 function UnauthenticatedApp(props) {
@@ -68,16 +67,7 @@ function UnauthenticatedApp(props) {
 							margin-top: -220px;
 						`}
 					>
-						<MeH5>
-							<b>Sign up</b> into MeUp
-						</MeH5>
-						<MeButton kind="primary">
-							<Google size="16" title="Get in with Google" />
-							Get in with Google
-						</MeButton>
-						<div>
-							<SignUpForm />
-						</div>
+						<SignUpForm />
 					</div>
 				</Flex>
 			</Flex>

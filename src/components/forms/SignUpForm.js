@@ -4,17 +4,30 @@ import { MeButton } from '../styles/MeButton';
 import * as Yup from 'yup';
 import { MeTextInput, FormGroup } from '../styles/MeTextInput';
 import { Flex, FlexItem } from '../styles/Flex';
+import { MeH5 } from '../styles/Typography';
+import { Google } from '@styled-icons/fa-brands/Google';
+import { Divider } from '../styles/Divider';
 
-function SignUpForm(props) {
+function SignUpForm() {
 	return (
 		<>
+			<MeH5>
+				<b>Sign up</b> into MeUp
+			</MeH5>
+			<MeButton kind="primary">
+				<Google size="16" title="Get in with Google" />
+				Get in with Google
+			</MeButton>
+			<Divider margin={{ top: 40, bottom: 20 }}>
+				<div>or</div>
+			</Divider>
 			<Formik
 				initialValues={{
-					username: '',
+					email: '',
 					password: ''
 				}}
 				validationSchema={Yup.object({
-					username: Yup.string().required('Required!'),
+					email: Yup.string().required('Required!'),
 					password: Yup.string().required('Required!')
 				})}
 				onSubmit={(values, { setSubmitting }) => {}}
