@@ -73,8 +73,15 @@ function UnauthenticatedApp(props) {
 				<Flex height="40px" justify="flex-end" align="center" gap="10">
 					<MeCaption>© 2020 MeUp</MeCaption>|
 					<MeCaption>All rights reserved.</MeCaption>|
-					<a href="https://example.com/privacy">Privacy policies</a>|
-					<a href="https://meup.com/terms">Terms & Conditions</a>
+					<MeCaption>
+						<a href="https://example.com/privacy">
+							Privacy policies
+						</a>
+					</MeCaption>
+					|
+					<MeCaption>
+						<a href="https://meup.com/terms">Terms & Conditions</a>
+					</MeCaption>
 				</Flex>
 			</Flex>
 		</Flex>

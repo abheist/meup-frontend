@@ -60,7 +60,7 @@ export const FlexItem = styled.div`
 	${props =>
 		props.gap &&
 		`
-		div, span, a, button {
+		div, span, a, button, p {
 			${props.gap && `margin: ${props.gap + 'px'};`}
 		}
 	`}
