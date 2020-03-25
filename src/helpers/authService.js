@@ -1,11 +1,11 @@
 export const setAuthToken = token => {
-  localStorage.setItem('meup_token', token);
+	localStorage.setItem('meup_token', token);
 };
 
 export const getAuthToken = () => {
-  return localStorage.getItem('meup_token');
+	return localStorage.getItem('meup_token');
 };
 
 export const isAuthenticated = () => {
-  return !!getAuthToken();
+	return !!getAuthToken();
 };

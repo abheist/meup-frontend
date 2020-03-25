@@ -25,29 +25,29 @@ export const COLOR_WARNING_DARK = '#ffac05';
 export const COLOR_WARNING_DARKER = '#ff9705';
 
 export const FONT_SAN_SERIF =
-  '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
+	'"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif';
 export const FONT_MONO_SPACED =
-  'source-code-pro, Menlo, Monaco, Consolas, "Courier New"';
+	'source-code-pro, Menlo, Monaco, Consolas, "Courier New"';
 
 export const SPACINGS = PropTypes.oneOf([4, 8, 16, 20, 24, 32, 40, 54]);
 export const COLORS = PropTypes.oneOf([
-  COLOR_LIGHT,
-  COLOR_DARK,
-  COLOR_BACKGROUND,
-  COLOR_PRIMARY_LIGHT,
-  COLOR_PRIMARY,
-  COLOR_PRIMARY_DARK,
-  COLOR_PRIMARY_DARKER,
-  COLOR_SUCCESS_LIGHT,
-  COLOR_SUCCESS,
-  COLOR_SUCCESS_DARK,
-  COLOR_SUCCESS_DARKER,
-  COLOR_DANGER_LIGHT,
-  COLOR_DANGER,
-  COLOR_DANGER_DARK,
-  COLOR_DANGER_DARKER,
-  COLOR_WARNING_LIGHT,
-  COLOR_WARNING,
-  COLOR_WARNING_DARK,
-  COLOR_WARNING_DARKER
+	COLOR_LIGHT,
+	COLOR_DARK,
+	COLOR_BACKGROUND,
+	COLOR_PRIMARY_LIGHT,
+	COLOR_PRIMARY,
+	COLOR_PRIMARY_DARK,
+	COLOR_PRIMARY_DARKER,
+	COLOR_SUCCESS_LIGHT,
+	COLOR_SUCCESS,
+	COLOR_SUCCESS_DARK,
+	COLOR_SUCCESS_DARKER,
+	COLOR_DANGER_LIGHT,
+	COLOR_DANGER,
+	COLOR_DANGER_DARK,
+	COLOR_DANGER_DARKER,
+	COLOR_WARNING_LIGHT,
+	COLOR_WARNING,
+	COLOR_WARNING_DARK,
+	COLOR_WARNING_DARKER
 ]);
