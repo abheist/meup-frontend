@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, FlexItem } from '../styles/Flex';
+import { Flex } from '../styles/Flex';
 import { COLOR_PRIMARY, COLOR_LIGHT } from '../styles/ThemeConstants';
 import logo from '../../assets/img/logo_white.png';
 import selfieImg from '../../assets/img/open-doodles-selfie.svg';
