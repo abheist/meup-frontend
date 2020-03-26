@@ -4,6 +4,7 @@ import {
 	COLOR_BACKGROUND,
 	COLOR_LIGHT
 } from './ThemeConstants';
+import { MeCaption } from './Typography';
 
 export const MeTextInput = styled.input`
 	display: block;
@@ -40,7 +41,14 @@ export const MeTextInput = styled.input`
 	}
 `;
 
+export const MeErrorMessage = styled(MeCaption)`
+	color: red;
+	margin: 4px 0 0 0;
+`;
+
 export const FormGroup = styled.div`
+	height: 96px;
+
 	${props =>
 		props.margin &&
 		props.margin.top &&

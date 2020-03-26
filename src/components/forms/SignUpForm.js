@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import { MeButton } from '../styles/MeButton';
 import * as Yup from 'yup';
-import { MeTextInput, FormGroup } from '../styles/MeTextInput';
+import { MeTextInput, FormGroup, MeErrorMessage } from '../styles/MeTextInput';
 import { Flex, FlexItem } from '../styles/Flex';
 import { MeH5 } from '../styles/Typography';
 import { Google } from '@styled-icons/fa-brands/Google';
@@ -44,7 +44,10 @@ function SignUpForm() {
 								minWidth="230px"
 								autoComplete="email"
 							/>
-							<ErrorMessage name="email" />
+							<ErrorMessage
+								component={MeErrorMessage}
+								name="email"
+							/>
 						</FormGroup>
 
 						<FormGroup width="100%">
@@ -59,7 +62,10 @@ function SignUpForm() {
 								as={MeTextInput}
 								autoComplete="new-password"
 							/>
-							<ErrorMessage name="password" />
+							<ErrorMessage
+								component={MeErrorMessage}
+								name="password"
+							/>
 						</FormGroup>
 						<FlexItem margin={{ top: 36 }}>
 							<MeButton type="submit" kind="primary">
