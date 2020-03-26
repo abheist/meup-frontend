@@ -25,9 +25,9 @@ export const Divider = styled.div`
 
 	div	{
 		text-align: center;
-		margin-left: calc(50% - 25px);
 		margin-top: -11px;
 		background: #fff;
-		width: 50px;
+		padding: 0 20px;
+		margin-left: calc(50% - 25px);
 	}
 `;

@@ -37,7 +37,8 @@ function UnauthenticatedApp(props) {
 						src={selfieImg}
 						alt="MeUp vector showing a persons"
 						css={`
-							height: 70%;
+							width: 32%;
+							max-width: 500px;
 							position: absolute;
 							left: 10%;
 							bottom: 0;
@@ -74,9 +75,7 @@ function UnauthenticatedApp(props) {
 					<MeCaption>© 2020 MeUp</MeCaption>|
 					<MeCaption>All rights reserved.</MeCaption>|
 					<MeCaption>
-						<a href="https://example.com/privacy">
-							Privacy policies
-						</a>
+						<a href="https://meup.com/privacy">Privacy policies</a>
 					</MeCaption>
 					|
 					<MeCaption>
