@@ -20,6 +20,11 @@ const fontFamily = theme('font', {
 });
 
 const GlobalStyle = createGlobalStyle`
+
+  html, body {
+    height: 100%;
+  }
+
   body {
     color: ${textColor};
     background-color: ${backgroundColor};
@@ -31,8 +36,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #root {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    display: flex;
   }
 
   ::selection {
