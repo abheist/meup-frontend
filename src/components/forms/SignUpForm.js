@@ -51,9 +51,7 @@ function SignUpForm() {
 						</FormGroup>
 
 						<FormGroup width="100%">
-							<label htmlFor="password">
-								Enter a new password
-							</label>
+							<label htmlFor="password">New password</label>
 							<Field
 								width="100%"
 								name="password"
