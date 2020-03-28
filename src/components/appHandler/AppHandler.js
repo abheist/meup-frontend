@@ -1,34 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnauthenticatedApp';
-import { isAuthenticated, setAuthToken } from '../../helpers/authService';
+import { getLocalToken } from '../../helpers/authService';
+import { useState } from 'react';
 
-class AppHandler extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			isAuthenticated: isAuthenticated()
-		};
-	}
+function AppHandler() {
+	const [token, setToken] = useState(getLocalToken() || undefined);
 
-	authenticateUser = token => {
-		setAuthToken(token);
-		this.setState({ ...this.state, isAuthenticated: true });
-	};
-
-	render() {
-		return (
-			<>
-				{this.state.isAuthenticated ? (
-					<AuthenticatedApp />
-				) : (
-					<UnauthenticatedApp
-						authenticateUser={this.authenticateUser}
-					/>
-				)}
-			</>
-		);
-	}
+	return (
+		<>
+			{!!token ? (
+				<AuthenticatedApp />
+			) : (
+				<UnauthenticatedApp setToken={setToken} />
+			)}
+		</>
+	);
 }
 
 export default AppHandler;

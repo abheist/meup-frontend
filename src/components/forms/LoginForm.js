@@ -1,14 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Formik, Form, ErrorMessage, Field } from 'formik';
 import { MeButton } from '../styles/MeButton';
 import * as Yup from 'yup';
 import { MeTextInput, FormGroup, MeErrorMessage } from '../styles/MeTextInput';
-import { QL_MUTATION_AUTHENTICATION } from '../../graphql/mutations/authentication';
+import {
+	QL_MUTATION_AUTH_TOKEN_WITH_USERNAME,
+	QL_MUTATION_AUTH_TOKEN_VERIFY
+} from '../../graphql/mutations/authentication';
 import { useMutation } from '@apollo/client';
 import { Flex, FlexItem } from '../styles/Flex';
+import {
+	setLocalToken,
+	setLocalRefreshToken,
+	setLocalExpTime,
+	getLocalToken
+} from '../../helpers/authService';
 
-function LoginForm(props) {
-	const [authenticate, { data }] = useMutation(QL_MUTATION_AUTHENTICATION);
+function LoginForm({ setToken }) {
+	const [requestLogin, { data: loginData }] = useMutation(
+		QL_MUTATION_AUTH_TOKEN_WITH_USERNAME
+	);
+
+	const [doVerifyToken, { data: verifyTokenData }] = useMutation(
+		QL_MUTATION_AUTH_TOKEN_VERIFY
+	);
+
+	useEffect(() => {
+		if (loginData?.tokenAuth?.success) {
+			setLocalToken(loginData.tokenAuth.token);
+			setLocalRefreshToken(loginData.tokenAuth.refreshToken);
+			doVerifyToken({
+				variables: {
+					token: loginData.tokenAuth.token
+				}
+			});
+		}
+	}, [loginData, doVerifyToken, setToken]);
+
+	useEffect(() => {
+		if (verifyTokenData?.verifyToken?.success) {
+			setLocalExpTime(verifyTokenData.verifyToken.payload.exp);
+			setToken(getLocalToken());
+		}
+	}, [verifyTokenData, setToken]);
 
 	return (
 		<>
@@ -22,7 +56,7 @@ function LoginForm(props) {
 					password: Yup.string().required('Required!')
 				})}
 				onSubmit={(values, { setSubmitting }) => {
-					authenticate({
+					requestLogin({
 						variables: {
 							username: values.username,
 							password: values.password
@@ -68,7 +102,6 @@ function LoginForm(props) {
 					</Flex>
 				</Form>
 			</Formik>
-			{data && props.authenticateUser(data.tokenAuth.token)}
 		</>
 	);
 }

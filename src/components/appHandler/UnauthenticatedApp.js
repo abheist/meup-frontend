@@ -60,7 +60,7 @@ function UnauthenticatedApp(props) {
 						top: 8
 					}}
 				>
-					<LoginForm authenticateUser={props.authenticateUser} />
+					<LoginForm {...props} />
 				</Flex>
 				<Flex justify="center" align="center" height="inherit">
 					<div
