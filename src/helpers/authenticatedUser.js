@@ -12,4 +12,15 @@ const setRefreshTokenContent = data => {
 	}
 };
 
-export { setRefreshTokenContent };
+const generateUsername = () => {
+	return (
+		Math.random()
+			.toString(36)
+			.substring(2, 15) +
+		Math.random()
+			.toString(36)
+			.substring(2, 15)
+	);
+};
+
+export { setRefreshTokenContent, generateUsername };
