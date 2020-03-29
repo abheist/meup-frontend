@@ -1,14 +1,27 @@
-import React from 'react';
-import { Formik, Form, ErrorMessage, Field } from 'formik';
-import { MeButton } from '../styles/MeButton';
-import * as Yup from 'yup';
-import { MeTextInput, FormGroup, MeErrorMessage } from '../styles/MeTextInput';
-import { Flex, FlexItem } from '../styles/Flex';
-import { MeH5 } from '../styles/Typography';
 import { Google } from '@styled-icons/fa-brands/Google';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import React, { useEffect } from 'react';
+import * as Yup from 'yup';
 import { Divider } from '../styles/Divider';
+import { Flex, FlexItem } from '../styles/Flex';
+import { MeButton } from '../styles/MeButton';
+import { FormGroup, MeErrorMessage, MeTextInput } from '../styles/MeTextInput';
+import { MeH5 } from '../styles/Typography';
+import { QL_MUTATION_REGISTER_NEW_USER } from '../../graphql/mutations/authentication';
+import { useMutation } from '@apollo/client';
+import { generateUsername } from '../../helpers/authenticatedUser';
 
 function SignUpForm() {
+	const [doRegisterUser, { data }] = useMutation(
+		QL_MUTATION_REGISTER_NEW_USER
+	);
+
+	useEffect(() => {
+		if (data?.register?.success) {
+			console.log('success! Please check your mail to verify yourself');
+		}
+	}, [data]);
+
 	return (
 		<>
 			<MeH5>
@@ -30,7 +43,18 @@ function SignUpForm() {
 					email: Yup.string().required('Required!'),
 					password: Yup.string().required('Required!')
 				})}
-				onSubmit={(values, { setSubmitting }) => {}}
+				onSubmit={(values, { setSubmitting, resetForm }) => {
+					doRegisterUser({
+						variables: {
+							email: values.email,
+							username: generateUsername(),
+							password1: values.password,
+							password2: values.password
+						}
+					});
+					setSubmitting(false);
+					resetForm({});
+				}}
 			>
 				<Form>
 					<Flex direction="column" justigy="space-between">
