@@ -60,8 +60,33 @@ export const FlexItem = styled.div`
 	${props =>
 		props.gap &&
 		`
-		div, span, a, button, p {
+		div, span, a, button, p, img {
 			${props.gap && `margin: ${props.gap + 'px'};`}
+		}
+	`}
+	${props =>
+		props.gapBetween &&
+		`
+		div, span, a, button, p, img {
+			margin: ${props.gapBetween + 'px'};
+		}
+
+		div:first-child,
+		span:first-child,
+		a:first-child,
+		button:first-child,
+		p:first-child,
+		img:first-child {
+			margin-left: 0;
+		}
+
+		div:last-child,
+		span:last-child,
+		a:last-child,
+		button:last-child,
+		p:last-child,
+		img:last-child {
+			margin-right: 0;
 		}
 	`}
 `;
