@@ -77,6 +77,7 @@ function LoginForm({ setToken }) {
 								type="text"
 								autoComplete="username"
 								width="200px"
+								tabIndex="1"
 							/>
 							<ErrorMessage
 								component={MeErrorMessage}
@@ -93,7 +94,10 @@ function LoginForm({ setToken }) {
 								<span>Password</span>
 								<FlexItem margin={{ right: 8 }}>
 									<MeCaption as="span">
-										<Link to="/forgot-password/">
+										<Link
+											to="/forgot-password/"
+											tabIndex="4"
+										>
 											Forgot password?
 										</Link>
 									</MeCaption>
@@ -105,6 +109,7 @@ function LoginForm({ setToken }) {
 								type="password"
 								autoComplete="current-password"
 								width="200px"
+								tabIndex="2"
 							/>
 							<ErrorMessage
 								component={MeErrorMessage}
@@ -112,7 +117,7 @@ function LoginForm({ setToken }) {
 							/>
 						</FormGroup>
 						<FlexItem margin={{ top: 36 }}>
-							<MeButton type="submit" kind="primary">
+							<MeButton type="submit" kind="primary" tabIndex="3">
 								Login
 							</MeButton>
 						</FlexItem>
