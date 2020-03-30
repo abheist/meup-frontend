@@ -5,7 +5,10 @@ import {
 	COLOR_LIGHT,
 	COLOR_DARK,
 	FONT_SAN_SERIF,
-	FONT_MONO_SPACED
+	FONT_MONO_SPACED,
+	COLOR_PRIMARY_DARK,
+	COLOR_PRIMARY,
+	COLOR_PRIMARY_DARKER
 } from './ThemeConstants';
 
 export const backgroundColor = theme('mode', {
@@ -42,6 +45,15 @@ const GlobalStyle = createGlobalStyle`
 	a {
 		text-decoration: none;
 		letter-spacing: 0px;
+		color: ${COLOR_PRIMARY_DARK};
+
+		&:hover {
+			color: ${COLOR_PRIMARY_DARKER};
+		}
+
+		&:focus, &:active {
+			color: ${COLOR_PRIMARY}
+		}
 	}
 
 	::selection {
