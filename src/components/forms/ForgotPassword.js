@@ -13,7 +13,7 @@ import { Divider } from '../styles/Divider';
 import { Flex, FlexItem } from '../styles/Flex';
 import { MeButton } from '../styles/MeButton';
 import { FormGroup, MeErrorMessage, MeTextInput } from '../styles/MeTextInput';
-import { COLOR_PRIMARY } from '../styles/ThemeConstants';
+import { COLOR_PRIMARY_DARK } from '../styles/ThemeConstants';
 import { MeBody2, MeH4, MeH5, MeH6, MeCaption } from '../styles/Typography';
 // eslint-disable-next-line no-unused-vars
 import styled from 'styled-components/macro';
@@ -62,13 +62,16 @@ function ForgotPasswordForm() {
 							</MeButton>
 						</FlexItem>
 						<MeCaption>
-							<ArrowBack
-								size="14"
-								css={`
-									margin-right: 4px;
-								`}
-							/>
-							<Link to="/">Back to Sign up</Link>
+							<Link to="/">
+								<ArrowBack
+									size="14"
+									color={COLOR_PRIMARY_DARK}
+									css={`
+										margin-right: 4px;
+									`}
+								/>
+								Back to Sign up
+							</Link>
 						</MeCaption>
 					</Flex>
 				</Form>
