@@ -92,7 +92,7 @@ export const FlexItem = styled.div`
 `;
 
 export const Flex = styled(FlexItem)`
-	display: flex;
+	display: flex !important;
 `;
 
 FlexItem.propTypes = {
