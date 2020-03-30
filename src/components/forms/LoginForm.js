@@ -15,6 +15,8 @@ import {
 	setLocalExpTime,
 	getLocalToken
 } from '../../helpers/authService';
+import { MeCaption } from '../styles/Typography';
+import { Link } from 'react-router-dom';
 
 function LoginForm({ setToken }) {
 	const [requestLogin, { data: loginData }] = useMutation(
@@ -66,7 +68,7 @@ function LoginForm({ setToken }) {
 				}}
 			>
 				<Form>
-					<Flex justigy="space-between">
+					<Flex justify="space-between">
 						<FormGroup margin={{ right: 10 }}>
 							<label htmlFor="username">Username</label>
 							<Field
@@ -74,6 +76,7 @@ function LoginForm({ setToken }) {
 								name="username"
 								type="text"
 								autoComplete="username"
+								width="200px"
 							/>
 							<ErrorMessage
 								component={MeErrorMessage}
@@ -82,12 +85,26 @@ function LoginForm({ setToken }) {
 						</FormGroup>
 
 						<FormGroup margin={{ right: 10 }}>
-							<label htmlFor="password">Password</label>
+							<Flex
+								as="label"
+								htmlFor="password"
+								justify="space-between"
+							>
+								<span>Password</span>
+								<FlexItem margin={{ right: 8 }}>
+									<MeCaption as="span">
+										<Link to="/forgot-password">
+											Forgot password?
+										</Link>
+									</MeCaption>
+								</FlexItem>
+							</Flex>
 							<Field
 								as={MeTextInput}
 								name="password"
 								type="password"
 								autoComplete="current-password"
+								width="200px"
 							/>
 							<ErrorMessage
 								component={MeErrorMessage}
