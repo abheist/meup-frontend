@@ -20,30 +20,35 @@ const fontFamily = theme('font', {
 });
 
 const GlobalStyle = createGlobalStyle`
+	html, body {
+		height: 100%;
+	}
 
-  html, body {
-    height: 100%;
-  }
+	body {
+		color: ${textColor};
+		background-color: ${backgroundColor};
+		font-family: ${fontFamily};
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		margin: 0;
+		padding: 0;
+	}
 
-  body {
-    color: ${textColor};
-    background-color: ${backgroundColor};
-    font-family: ${fontFamily};
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    padding: 0;
-  }
+	#root {
+		height: 100%;
+		display: flex;
+	}
 
-  #root {
-    height: 100%;
-    display: flex;
-  }
+	a {
+		text-decoration: none;
+		letter-spacing: 0px;
+	}
 
-  ::selection {
-    color: rgb(255, 255, 255);
-    background-color: rgb(87, 62, 222);
-}
+	::selection {
+		color: rgb(255, 255, 255);
+		background-color: rgb(87, 62, 222);
+	}
+
 `;
 
 const Theme = props => (
