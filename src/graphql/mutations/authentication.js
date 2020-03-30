@@ -28,6 +28,15 @@ export const QL_MUTATION_VERIFY_ACCOUNT_TOKEN = gql`
 	}
 `;
 
+export const QL_MUTATION_SEND_RESET_PASSWORD_EMAIL = gql`
+	mutation sendPasswordResetEmail($email: String!) {
+		sendPasswordResetEmail(email: $email) {
+			success
+			errors
+		}
+	}
+`;
+
 export const QL_MUTATION_AUTH_TOKEN_WITH_USERNAME = gql`
 	mutation TokenAuth($username: String!, $password: String!) {
 		tokenAuth(username: $username, password: $password) {
