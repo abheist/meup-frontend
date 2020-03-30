@@ -17,13 +17,15 @@ function AppHandler() {
 		QL_MUTATION_AUTH_REFRESH_TOKEN
 	);
 
-	if (Math.round(new Date().getTime() / 1000) > getLocalExpTime()) {
-		doRefreshToken({
-			variables: {
-				refreshToken: getLocalRefreshToken()
-			}
-		});
-	}
+	useEffect(() => {
+		if (Math.round(Date.now() / 1000) > getLocalExpTime()) {
+			doRefreshToken({
+				variables: {
+					refreshToken: getLocalRefreshToken()
+				}
+			});
+		}
+	}, [doRefreshToken]);
 
 	useEffect(() => {
 		if (refreshTokenData?.refreshToken?.success) {
