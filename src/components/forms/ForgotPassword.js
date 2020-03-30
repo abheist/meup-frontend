@@ -1,24 +1,21 @@
 import { useMutation } from '@apollo/client';
+import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack';
 import { MailSend } from '@styled-icons/boxicons-regular/MailSend';
-import { Google } from '@styled-icons/fa-brands/Google';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import gmailLogo from '../../assets/img/gmailLogo.svg';
 import yahooLogo from '../../assets/img/outlookLogo.svg';
 import outlookLogo from '../../assets/img/yahooMailLogo.svg';
 import { QL_MUTATION_SEND_RESET_PASSWORD_EMAIL } from '../../graphql/mutations/authentication';
-import { generateUsername } from '../../helpers/authenticatedUser';
-import { Divider } from '../styles/Divider';
 import { Flex, FlexItem } from '../styles/Flex';
 import { MeButton } from '../styles/MeButton';
 import { FormGroup, MeErrorMessage, MeTextInput } from '../styles/MeTextInput';
-import { COLOR_PRIMARY_DARK, COLOR_PRIMARY } from '../styles/ThemeConstants';
-import { MeBody2, MeH4, MeH5, MeH6, MeCaption } from '../styles/Typography';
+import { COLOR_PRIMARY, COLOR_PRIMARY_DARK } from '../styles/ThemeConstants';
+import { MeBody2, MeCaption, MeH4, MeH5, MeH6 } from '../styles/Typography';
 // eslint-disable-next-line no-unused-vars
 import styled from 'styled-components/macro';
-import { Link } from 'react-router-dom';
-import { ArrowBack } from '@styled-icons/boxicons-regular/ArrowBack';
 
 function ForgotPasswordForm() {
 	const [sendResetPasswordEmail, { data }] = useMutation(
