@@ -93,7 +93,7 @@ function LoginForm({ setToken }) {
 								<span>Password</span>
 								<FlexItem margin={{ right: 8 }}>
 									<MeCaption as="span">
-										<Link to="/forgot-password">
+										<Link to="/forgot-password/">
 											Forgot password?
 										</Link>
 									</MeCaption>

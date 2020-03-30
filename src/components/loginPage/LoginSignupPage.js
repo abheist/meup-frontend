@@ -9,8 +9,11 @@ import styled from 'styled-components/macro';
 import LoginForm from '../forms/LoginForm';
 
 import SignUpForm from '../forms/SignUpForm';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
+import ForgotPasswordForm from '../forms/ForgotPassword';
 
 function LoginSignupPage(props) {
+	let { path, url } = useRouteMatch();
 	return (
 		<Flex fill="true">
 			<Flex
@@ -68,7 +71,14 @@ function LoginSignupPage(props) {
 							margin-top: -220px;
 						`}
 					>
-						<SignUpForm />
+						<Switch>
+							<Route exact path={path}>
+								<SignUpForm />
+							</Route>
+							<Route path={`/forgot-password/`}>
+								<ForgotPasswordForm />
+							</Route>
+						</Switch>
 					</div>
 				</Flex>
 				<Flex height="40px" justify="flex-end" align="center" gap="10">
