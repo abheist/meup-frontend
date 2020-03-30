@@ -3,6 +3,7 @@ import { Flex } from '../styles/Flex';
 import { COLOR_PRIMARY, COLOR_LIGHT } from '../styles/ThemeConstants';
 import logo from '../../assets/img/logo_white.png';
 import selfieImg from '../../assets/img/open-doodles-selfie.svg';
+import forgotPassword from '../../assets/img/clumsy.svg';
 import { MeLightH5, MeLightH6, MeCaption } from '../styles/Typography';
 // eslint-disable-next-line no-unused-vars
 import styled from 'styled-components/macro';
@@ -36,17 +37,34 @@ function LoginSignupPage(props) {
 					<MeLightH6 color={COLOR_LIGHT}>
 						- Sir Richard Branson.
 					</MeLightH6>
-					<img
-						src={selfieImg}
-						alt="MeUp vector showing a persons"
-						css={`
-							width: 32%;
-							max-width: 500px;
-							position: absolute;
-							left: 10%;
-							bottom: 0;
-						`}
-					/>
+					<Switch>
+						<Route exact path={path}>
+							<img
+								src={selfieImg}
+								alt="MeUp vector showing a persons"
+								css={`
+									width: 32%;
+									max-width: 500px;
+									position: absolute;
+									left: 10%;
+									bottom: 0;
+								`}
+							/>
+						</Route>
+						<Route path={`/forgot-password/`}>
+							<img
+								src={forgotPassword}
+								alt="MeUp vector showing a persons"
+								css={`
+									width: 50%;
+									max-width: 700px;
+									position: absolute;
+									left: 10%;
+									bottom: 0;
+								`}
+							/>
+						</Route>
+					</Switch>
 				</div>
 			</Flex>
 			<Flex
