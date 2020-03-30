@@ -11,6 +11,7 @@ import {
 import AppHandler from '../appHandler/AppHandler';
 import { setContext } from '@apollo/link-context';
 import { AUTH_TOKEN_NAME } from '../../helpers/authService';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
 	const httpLink = new HttpLink({ uri: 'http://localhost:8000/graphql/' });
@@ -31,11 +32,13 @@ function App() {
 	});
 
 	return (
-		<ApolloProvider client={client}>
-			<Theme>
-				<AppHandler />
-			</Theme>
-		</ApolloProvider>
+		<BrowserRouter>
+			<ApolloProvider client={client}>
+				<Theme>
+					<AppHandler />
+				</Theme>
+			</ApolloProvider>
+		</BrowserRouter>
 	);
 }
 
