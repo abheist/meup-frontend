@@ -1,10 +1,38 @@
-import React from 'react';
+import { useMutation } from '@apollo/client';
+import React, { useEffect, useState } from 'react';
+import { QL_MUTATION_AUTH_REFRESH_TOKEN } from '../../graphql/mutations/authentication';
+import {
+	getLocalExpTime,
+	getLocalRefreshToken,
+	getLocalToken,
+	setLocalToken,
+	setLocalRefreshToken,
+	setLocalExpTime
+} from '../../helpers/authService';
 import AuthenticatedApp from './AuthenticatedApp';
 import UnauthenticatedApp from './UnauthenticatedApp';
-import { getLocalToken } from '../../helpers/authService';
-import { useState } from 'react';
 
 function AppHandler() {
+	const [doRefreshToken, { data: refreshTokenData }] = useMutation(
+		QL_MUTATION_AUTH_REFRESH_TOKEN
+	);
+
+	if (Math.round(new Date().getTime() / 1000) > getLocalExpTime()) {
+		doRefreshToken({
+			variables: {
+				refreshToken: getLocalRefreshToken()
+			}
+		});
+	}
+
+	useEffect(() => {
+		if (refreshTokenData?.refreshToken?.success) {
+			setLocalToken(refreshTokenData.refreshToken.token);
+			setLocalRefreshToken(refreshTokenData.refreshToken.refreshToken);
+			setLocalExpTime(refreshTokenData.refreshToken.payload.exp);
+		}
+	}, [refreshTokenData]);
+
 	const [token, setToken] = useState(getLocalToken() || undefined);
 
 	return (
