@@ -60,7 +60,7 @@ function LoginForm({ setToken }) {
 				onSubmit={(values, { setSubmitting }) => {
 					requestLogin({
 						variables: {
-							username: values.username,
+							email: values.username,
 							password: values.password
 						}
 					});

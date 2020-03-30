@@ -37,9 +37,26 @@ export const QL_MUTATION_SEND_RESET_PASSWORD_EMAIL = gql`
 	}
 `;
 
+export const QL_MUTATION_PASSWORD_RESET_WITHOUT_OLD_PASSWORD = gql`
+	mutation passwordReset(
+		$token: String!
+		$newPassword1: String!
+		$newPassword2: String!
+	) {
+		passwordReset(
+			token: $token
+			newPassword1: $newPassword1
+			newPassword2: $newPassword2
+		) {
+			success
+			errors
+		}
+	}
+`;
+
 export const QL_MUTATION_AUTH_TOKEN_WITH_USERNAME = gql`
-	mutation TokenAuth($username: String!, $password: String!) {
-		tokenAuth(username: $username, password: $password) {
+	mutation TokenAuth($email: String, $username: String, $password: String!) {
+		tokenAuth(email: $email, username: $username, password: $password) {
 			token
 			success
 			errors

@@ -3,7 +3,6 @@ import { useParams, Redirect } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { QL_MUTATION_VERIFY_ACCOUNT_TOKEN } from '../../graphql/mutations/authentication';
 import { toast } from 'react-toastify';
-import { Flex } from '../styles/Flex';
 
 function EmailVerificationForm() {
 	const [doVerifyToken, { data }] = useMutation(
