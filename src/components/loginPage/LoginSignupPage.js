@@ -1,20 +1,19 @@
 import React from 'react';
-import { Flex } from '../styles/Flex';
-import { COLOR_PRIMARY, COLOR_LIGHT } from '../styles/ThemeConstants';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
+import forgotPassword from '../../assets/img/clumsy.svg';
 import logo from '../../assets/img/logo_white.png';
 import selfieImg from '../../assets/img/open-doodles-selfie.svg';
-import forgotPassword from '../../assets/img/clumsy.svg';
-import { MeLightH5, MeLightH6, MeCaption } from '../styles/Typography';
+import ForgotPasswordForm from '../forms/ForgotPassword';
+import LoginForm from '../forms/LoginForm';
+import SignUpForm from '../forms/SignUpForm';
+import { Flex } from '../styles/Flex';
+import { COLOR_LIGHT, COLOR_PRIMARY } from '../styles/ThemeConstants';
+import { MeCaption, MeLightH5, MeLightH6 } from '../styles/Typography';
 // eslint-disable-next-line no-unused-vars
 import styled from 'styled-components/macro';
-import LoginForm from '../forms/LoginForm';
-
-import SignUpForm from '../forms/SignUpForm';
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
-import ForgotPasswordForm from '../forms/ForgotPassword';
 
 function LoginSignupPage(props) {
-	let { path, url } = useRouteMatch();
+	let { path } = useRouteMatch();
 	return (
 		<Flex fill="true">
 			<Flex
