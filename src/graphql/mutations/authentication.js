@@ -19,6 +19,15 @@ export const QL_MUTATION_REGISTER_NEW_USER = gql`
 	}
 `;
 
+export const QL_MUTATION_VERIFY_ACCOUNT_TOKEN = gql`
+	mutation VerifAccount($token: String!) {
+		verifyAccount(token: $token) {
+			success
+			errors
+		}
+	}
+`;
+
 export const QL_MUTATION_AUTH_TOKEN_WITH_USERNAME = gql`
 	mutation TokenAuth($username: String!, $password: String!) {
 		tokenAuth(username: $username, password: $password) {
