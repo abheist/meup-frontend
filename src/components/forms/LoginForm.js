@@ -63,7 +63,7 @@ function LoginForm({ setToken }) {
 							email: values.username,
 							password: values.password
 						}
-					});
+					}).catch(error => console.log(JSON.stringify(error)));
 					setSubmitting = false;
 				}}
 			>
